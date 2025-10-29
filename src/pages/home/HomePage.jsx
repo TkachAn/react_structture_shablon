@@ -4,10 +4,10 @@ import { MainHome } from "../../components/structure/main/mainHome";
 import { Main } from "../../components/structure/main/main";
 import { Hero } from "../../components/structure/main/hero/hero";
 import { Section } from "../../components/structure/main/sections/section";
-import { Advantages } from "./content/advantages";
-import { HeroContent } from "./content/hero";
-import Clients from "./content/clients";
-import { Craft } from "./content/craft";
+import { Advantages } from "./content/advantages/advantages";
+import { HeroContent } from "./content/hero/hero";
+import Clients from "./content/clients/clients";
+import { Craft } from "./content/craft/craft";
 
 export function HomePage() {
   return (

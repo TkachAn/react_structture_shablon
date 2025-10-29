@@ -1,5 +1,5 @@
 import s from "./hero.module.css";
-import { Container } from "../../../components/structure/container/container";
+import { Container } from "../../../../components/structure/container/container";
 
 export function HeroContent() {
   return (
