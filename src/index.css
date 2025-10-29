@@ -72,6 +72,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     --spacing-sm: 10px;
     --spacing-md: 20px; /* Стандартный отступ */
     --spacing-lg: 40px;
+/* 3. Типографика */
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+
+    /* 🚀 4. Брейкпоинты для Media Queries (Mobile-first подход) */
+    --breakpoint-sm: 768px; /* Планшеты (Tablet) и выше */
+    --breakpoint-md: 1024px; /* Десктопы (Desktop) и выше */
+    --breakpoint-lg: 1280px; /* Большие Десктопы (Large Desktop) и выше */
+    --breakpoint-xl: 1440px; /* HD и выше */
 }
 
 
