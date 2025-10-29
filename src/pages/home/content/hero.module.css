@@ -1,0 +1,33 @@
+.hero {
+  background-image: url('/public/Imghero@2x.jpg');
+  background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+    color:whitesmoke;
+}
+
+.hero__btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero__btn:hover {
+  background-color: #0056b3;
+}
+.hero__subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 15px;
+}

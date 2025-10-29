@@ -1,0 +1,43 @@
+/* header */
+.flexbox_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(1, 2, 0, 0.1);
+  position: relative;
+}
+
+/* 2. Показываем кнопку-иконку для открытия меню на мобильных */
+.header_mobile_button {
+  display: block;
+}
+
+/* ======================================================= */
+
+/* Добавьте это в секцию BASE STYLES */
+.flexbox_header_end {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Интервал между SignIn и кнопкой меню */
+}
+
+/* ======================================================= */
+@media (min-width: 768px) {
+  .flexbox_header_end {
+    display: none;
+  }
+  /* 2. Скрываем кнопку-иконку на десктопе */
+  .header_mobile_button {
+    display: none;
+  }
+
+  /* 3. Скрываем мобильное меню на десктопе */
+}
+/* ======================================================= */
