@@ -16,8 +16,6 @@ const TeamCard = ({ name, position, image }) => {
           <br />
           {position}
         </p>
-
-        {/* Вложенный компонент для соцсетей */}
         <SocialLinks />
       </div>
     </li>

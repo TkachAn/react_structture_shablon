@@ -65,16 +65,43 @@
     border-radius: 50%;
     fill: #AFB1B8;
     /* Цвет иконки по умолчанию */
+
+    background-color: #ffffff;
+    /* Белый фон */
+    border: 1px solid #2196F3;
+    /* Голубая обводка */
+    fill: #2196F3;
+    /* Голубая иконка */
+
     transition: fill 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
 
 
-/* Ховер */
+/* Ховер 
 .social__link:hover,
 .social__link:focus {
     background-color: #2196F3;
-    /* Акцентный цвет */
+    
     fill: #ffffff;
-    /* Белая иконка */
+    
+}
+*/
+@media screen and (min-width: 1200px) {
+    .social__link {
+        fill: #AFB1B8;
+        border: 1px solid #AFB1B8;
+        transition: fill 250ms ease-in-out, background-color 250ms ease-in-out;
+    }
+
+
+    /* ИЗМЕНЕНИЕ 1: Стили Ховера только для Десктопа */
+    .social__link:hover,
+    .social__link:focus {
+        /* При ховере: Фон становится голубым, иконка белой */
+        background-color: #2196F3;
+        fill: #ffffff;
+        border-color: #2196F3;
+        /* Убедимся, что обводка остается голубой (или того же цвета, что и фон) */
+    }
 }
