@@ -1,0 +1,101 @@
+/* s.module.css */
+/* s.module.css */
+
+/* --- 1. Контейнер галереи (ul.gallery) --- */
+/*
+   В коде React ul.gallery имеет className="gallery". 
+   Если этот класс НЕ ИМПОРТИРОВАН из s.module.css, то он должен быть определен в ГЛОБАЛЬНЫХ стилях.
+   Однако, для надежности, я включу его здесь, предполагая, что вы измените React-код на className={s.gallery}.
+   Если вы не хотите менять React-код, уберите этот блок или перенесите его в глобальный CSS.
+*/
+.gallery {
+    display: flex;
+    /* Активация Flexbox */
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на новую строку, если не умещаются */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    /* Расстояние между элементами (современный подход) */
+    justify-content: center;
+    /* Центрирование элементов, если их меньше, чем может поместиться в ряд */
+}
+
+
+/* --- 2. Элемент галереи (li.item) --- */
+/*
+   Аналогично, в коде React li.item имеет className="item".
+   Я включу его здесь, предполагая, что вы измените React-код на className={s.item}.
+*/
+.item {
+    /* Чтобы поместилось 3 элемента в ряд (370px * 3 + 30px * 2) */
+    flex-basis: 370px;
+
+    /* Обязательно для правильного позиционирования дочернего элемента s.bgTitle */
+    position: relative;
+
+    /* Скрывает части, выходящие за границы (например, для эффекта увеличения) */
+    overflow: hidden;
+
+    /* Для плавного перехода при наведении, если таковой будет добавлен к самому item */
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Гарантируем, что изображение заполняет li.item и убираем лишний пробел */
+.item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* --- 3. Контейнер подписи (s.bgTitle) --- */
+.bgTitle {
+    /* Абсолютное позиционирование, привязанное к li.item (position: relative) */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* Фиксированная высота для блока */
+
+    /* Темный полупрозрачный фон */
+    background-color: rgba(47, 48, 58, 0.8);
+
+    /* Flexbox для центрирования текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Эффект наложения: по умолчанию скрыт */
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* --- 4. Стиль текста подписи (s.imgTitle) --- */
+.imgTitle {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    /* Удаляем стандартные отступы <p> */
+}
+
+
+/* --- 5. Эффект при наведении --- */
+.item:hover .bgTitle {
+    opacity: 1;
+    /* Показывает подпись */
+}
+
+/* Дополнительно: можно добавить эффект тени */
+.item:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+}
