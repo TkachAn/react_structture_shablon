@@ -63,30 +63,15 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    fill: #AFB1B8;
-    /* Цвет иконки по умолчанию */
-
+    /*fill: #AFB1B8;*/
     background-color: #ffffff;
-    /* Белый фон */
     border: 1px solid #2196F3;
-    /* Голубая обводка */
     fill: #2196F3;
-    /* Голубая иконка */
+   
 
     transition: fill 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
-
-
-/* Ховер 
-.social__link:hover,
-.social__link:focus {
-    background-color: #2196F3;
-    
-    fill: #ffffff;
-    
-}
-*/
 @media screen and (min-width: 1200px) {
     .social__link {
         fill: #AFB1B8;
