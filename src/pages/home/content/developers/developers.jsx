@@ -1,8 +1,22 @@
-export default function Developers() {
+
+import s from "./Developers.module.css";
+import TeamCard from "./TeamCard";
+import { developersData } from "./data"; // Импортируем данные команды
+
+const Developers = () => {
   return (
-    <section>
-      <h2>Наша команда разработчиков</h2>
-      <p>Мы гордимся нашей командой опытных разработчиков, которые готовы реализовать ваши идеи.</p>
-    </section>
+    <ul className={s.developers__list}>
+        {developersData.map((developer) => (
+          <TeamCard
+            key={developer.id}
+            name={developer.name}
+            position={developer.position}
+            image={developer.image}
+          />
+        ))}
+      </ul>
+    
   );
-}
+};
+
+export default Developers;

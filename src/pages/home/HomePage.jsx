@@ -8,6 +8,7 @@ import { Advantages } from "./content/advantages/advantages";
 import { HeroContent } from "./content/hero/hero";
 import Clients from "./content/clients/clients";
 import { Craft } from "./content/craft/craft";
+import Developers from "./content/developers/developers";
 
 export function HomePage() {
   return (
@@ -26,6 +27,9 @@ export function HomePage() {
           </Section>  
           <Section title="Наши клиенты">
             <Clients />
+          </Section>
+          <Section title="Наша команда разработчиков">
+          <Developers />
           </Section>
         </Main>
       </MainHome>
