@@ -3,7 +3,7 @@ import s from './s.module.css';
 export function Address() {
   return (
     <div className={s.address}>
-      <h5>Our Address</h5>
+      <h5>Address</h5>
       <p>
         Украина 54038
         Николаев <br />
