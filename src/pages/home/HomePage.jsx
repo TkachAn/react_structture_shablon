@@ -15,21 +15,21 @@ export function HomePage() {
     <>
       <Header />
       <MainHome>
-        <Hero>
-          <HeroContent />
-        </Hero>
         <Main>
+          <Hero>
+            <HeroContent />
+          </Hero>
           <Section title="Особенности">
             <Advantages />
           </Section>
           <Section title="Наши услуги">
             <Craft />
-          </Section>  
+          </Section>
           <Section title="Наши клиенты">
             <Clients />
           </Section>
           <Section title="Наша команда разработчиков">
-          <Developers />
+            <Developers />
           </Section>
         </Main>
       </MainHome>

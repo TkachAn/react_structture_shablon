@@ -20,7 +20,7 @@ export function HeroContent() {
 
 export function HeroContent() {
   return (
-    <div className={s.hero}> {/* Заменил <dir> на <div> */}
+    <div className={s.hero}>
       
       {/* 1. Добавляем компонент <picture> для адаптивного фона */}
       <picture className={s.hero__background}>

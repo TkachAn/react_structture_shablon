@@ -8,9 +8,7 @@
 /* Блок __list (.advantages__list) */
 .advantages__list,
 .clients__list {
-  padding: 0 15px;
   margin: 0 auto;
-  /*max-width: 1200px;*/
   align-content: center;
   gap: 30px;
   list-style: none;

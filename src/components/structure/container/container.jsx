@@ -7,3 +7,10 @@ export function Container({children}) {
         </div>
     );
 }
+export function PaddingBox({children}) {
+    return (
+        <div className={s.box}>
+            {children}
+        </div>
+    );
+}
