@@ -14,7 +14,10 @@
   list-style: none;
   /* grid-template-columns: repeat(4, 1fr);*/
 }
-
+.invisible {
+  position: absolute;
+  opacity: 0;
+}
 .advantages__feature {
   margin: 0 auto;
   width: 100%;

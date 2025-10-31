@@ -2,7 +2,8 @@ import s from "./s.module.css";
 
 export function Advantages() {
   return (
-    
+    <>
+    <h2 className={s.invisible}>Особенности</h2>
       <ul className={s.advantages__list}>
         <li className={s.advantages__feature}>
           <div className={s.advantages__group}>
@@ -65,6 +66,7 @@ export function Advantages() {
           </div>
         </li>
       </ul>
+    </>
   
   );
 }

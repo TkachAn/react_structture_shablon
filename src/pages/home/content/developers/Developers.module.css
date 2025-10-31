@@ -46,8 +46,8 @@
     }
 }
 
-/* 💻 ДЕСКТОП (min-width: 1200px): 4 карточки в ряд */
-@media screen and (min-width: 1200px) {
+/* 💻 ДЕСКТОП (min-width: 1280px): 4 карточки в ряд */
+@media screen and (min-width: 1280px) {
     .section {
         padding-top: 94px;
         padding-bottom: 94px;

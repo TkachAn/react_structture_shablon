@@ -19,7 +19,7 @@ export function HomePage() {
           <Hero>
             <HeroContent />
           </Hero>
-          <Section title="Особенности">
+          <Section>
             <Advantages />
           </Section>
           <Section title="Наши услуги">
