@@ -1,8 +1,14 @@
 import { Section } from "../../components/structure/main/sections/section";
+import { Header } from "../../components/structure/header/header";
+import { Footer } from "../../components/structure/footer/footer";
 import s from "./s.module.css";
+import { Main } from "../../components/structure/main/main";
 
 export function NotFound() {
     return (
+      <>
+      <Header />
+      <Main title="404 Not Found">  
       <Section title="Страница не найдена">
         {/* s.notFound для центрирования и базового оформления */}
         <div className={s.notFound}>
@@ -30,5 +36,8 @@ export function NotFound() {
                 </div> */}
         </div>
       </Section>
+      </Main>
+      <Footer />
+      </>
     );
 }

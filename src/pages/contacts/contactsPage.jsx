@@ -12,7 +12,7 @@ export function ContactsPage() {
   return (
     <>
       <Header />
-      <Main title="Contacts Page">
+      <Main>
         
         <AsideLeft title={"Aside Left Section"}>
           <HeaderV />
