@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/home/HomePage.jsx";
 import { ContactsPage } from "./pages/contacts/contactsPage.jsx";
 import { AboutPage } from "./pages/about/about.jsx";
+import { AuthPage } from "./pages/auth/auth.jsx";
 import { NotFound } from "./pages/notfound/notFound.jsx";
 
 
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/contacts" element={<ContactsPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/SignIn" element={<AuthPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
