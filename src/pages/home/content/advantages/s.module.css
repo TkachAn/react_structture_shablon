@@ -25,19 +25,22 @@
 }
 /* Блок __group (.advantages__group) */
 .advantages__group {
-  max-width: 450px;
+  /*max-width: 450px;*/
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  width: 100%;
+  height: auto;
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: #f5f4fa;
 }
 /* Блок __icon (.advantages__icon) */
 .advantages__icon {
-  width: 70px;
-  height: 70px;
+  /*width: 70px;
+  height: 70px;*/
+  width: 6rem;
+  height: auto;
 }
 .advantages__title-grup {
   text-align: center;

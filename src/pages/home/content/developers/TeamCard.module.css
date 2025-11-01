@@ -17,15 +17,15 @@
 }
 
 .teamCard__footer {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .teamCard__text {
-    font-size: 16px;
-    line-height: 1.18;
+    /*font-size: 16px;*/
+    line-height: 0.5;
     color: #757575;
     /* primary-txt-color */
-    margin: 0 0 16px 0;
+    margin: 0 0 30px 0;
 }
 
 .teamCard__name {
