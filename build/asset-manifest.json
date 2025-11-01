@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_structture_shablon/static/css/main.5683068f.css",
+    "main.js": "/react_structture_shablon/static/js/main.3bad5ecb.js",
+    "static/js/453.358a1bd2.chunk.js": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js",
+    "index.html": "/react_structture_shablon/index.html",
+    "main.5683068f.css.map": "/react_structture_shablon/static/css/main.5683068f.css.map",
+    "main.3bad5ecb.js.map": "/react_structture_shablon/static/js/main.3bad5ecb.js.map",
+    "453.358a1bd2.chunk.js.map": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5683068f.css",
+    "static/js/main.3bad5ecb.js"
+  ]
+}
