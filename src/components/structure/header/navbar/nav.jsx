@@ -14,18 +14,29 @@ export function Navbar({ isMobile = false, isMenuOpen = false, closeMenu = () =>
     }
 
     return (
-        <nav className={navClass}>
-            <ul>
-                <li>
-                    <Link to="/" onClick={isMobile ? closeMenu : undefined}>Home</Link>
-                </li>
-                <li>
-                    <Link to="/contacts" onClick={isMobile ? closeMenu : undefined}>Contacts</Link>
-                </li>
-                <li>
-                    <Link to="/about" onClick={isMobile ? closeMenu : undefined}>About</Link>
-                </li>
-            </ul>
-        </nav>
+      <nav className={navClass}>
+        <ul>
+          <li className={s.invisible}>
+            <Link to="/SignIn" onClick={isMobile ? closeMenu : undefined}>
+              Sign In
+            </Link>
+          </li>
+          <li>
+            <Link to="/" onClick={isMobile ? closeMenu : undefined}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/contacts" onClick={isMobile ? closeMenu : undefined}>
+              Contacts
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={isMobile ? closeMenu : undefined}>
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
     );
 }

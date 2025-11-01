@@ -6,8 +6,13 @@ export function NavbarV() {
   return (
     <nav className={s.navbar_v}>
       <ul>
+        <li className={s.invisible}>
+          <Link to="/SignIn">
+            Sign In
+          </Link>
+        </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Home!!!</Link>
         </li>
         <li>
           <Link to="/contacts">Contacts</Link>

@@ -15,7 +15,9 @@
   z-index: 100;
   padding: 10px 0;
 }
-
+.invisible {
+  display: block;
+}
 .navbar_v ul {
   /* Ваши существующие стили для вертикального списка */
   display: block;
@@ -51,7 +53,9 @@
   .navbar {
     display: block;
   }
-
+.invisible {
+  display: none;
+}
   .navbar ul {
     display: flex; /* Возвращаем горизонтальную раскладку для десктопа */
     justify-content: center;
