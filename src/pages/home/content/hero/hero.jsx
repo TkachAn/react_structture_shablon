@@ -16,7 +16,9 @@ export function HeroContent() {
           media="(min-width: 769px)"
           type="image/webp"
           // Адаптивные дескрипторы плотности
-          srcset="./images/hero/Img_hero_1600x600.webp 1x, 
+          srcset="./images/hero/Img_hero_960x800.webp 960w,
+                  ./images/hero/Img_hero_1536x800.webp 1536w,
+                  ./images/hero/Img_hero_1600x600.webp 1x, 
                   ./images/hero/Img_hero_3200x1200.webp 2x" 
         />
         
