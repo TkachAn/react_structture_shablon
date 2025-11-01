@@ -1,22 +1,6 @@
 import s from "./hero.module.css";
 import { Container } from "../../../../components/structure/container/container";
-/*
-export function HeroContent() {
-  return (
-    <div className={s.hero}>
-      <Container>
-        <h1 className={s.hero__title}>
-          Эффективные решения <br />
-          для вашего бизнеса
-        </h1>
-        <button className={s.hero__btn} type="button" data-modal-open>
-          Заказать услугу
-        </button>
-      </Container>
-    </div>
-  );
-}*/
-// HeroContent.jsx
+
 
 export function HeroContent() {
   return (
@@ -32,8 +16,8 @@ export function HeroContent() {
           media="(min-width: 769px)"
           type="image/webp"
           // Адаптивные дескрипторы плотности
-          srcset="/images/hero/Img_hero_1600x600.webp 1x, 
-                  /images/hero/Img_hero_3200x1200.webp 2x" 
+          srcset="./images/hero/Img_hero_1600x600.webp 1x, 
+                  ./images/hero/Img_hero_3200x1200.webp 2x" 
         />
         
         {/*
@@ -43,17 +27,17 @@ export function HeroContent() {
         <source 
           type="image/webp"
           // Адаптивные дескрипторы ширины
-          srcset="/images/hero/Img_hero_480x400.webp 480w, 
-                  /images/hero/Img_hero_768x400.webp 768w,
-                  /images/hero/Img_hero_960x800.webp 960w,
-                  /images/hero/Img_hero_1536x800.webp 1536w"
+          srcset="./images/hero/Img_hero_480x400.webp 480w, 
+                  ./images/hero/Img_hero_768x400.webp 768w,
+                  ./images/hero/Img_hero_960x800.webp 960w,
+                  ./images/hero/Img_hero_1536x800.webp 1536w"
           // Сообщаем браузеру, что изображение занимает всю ширину вьюпорта
           sizes="100vw"
         />
 
         {/* Обязательный <img> как запасной вариант для всех случаев (Fallback) */}
         <img 
-          src="/images/hero/Img_hero_1600x600_1x.jpg" 
+          src="./images/hero/Img_hero_1600x600_1x.jpg" 
           alt="Команда инженеров, работающих над 3D-моделью"
           className={s.hero__image}
         />
