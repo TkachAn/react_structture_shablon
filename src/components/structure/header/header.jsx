@@ -7,8 +7,11 @@ import { SignIn } from "./auth/signin.jsx";
 //import s from "../../structure/s.module.css";
 import s from "./s.module.css";
 import { Container } from "../container/container.jsx";
-import { MenuIconButton } from "../../base/buttons/IconButtons.jsx";
-import { CloseIconButton } from "../../base/buttons/IconButtons.jsx";
+import {
+  MenuIconButton,
+  CloseIconButton,
+} from "../../base/buttons/IconButtons.jsx";
+//import { CloseIconButton } from "../../base/buttons/IconButtons.jsx";
 
 export function Header() {
   // 1. Добавляем состояние для отслеживания открытого/закрытого меню

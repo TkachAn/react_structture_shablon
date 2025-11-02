@@ -1,75 +1,121 @@
 // src/elem/button/iconButtons.jsx
 
-//import { signOut } from 'next-auth/react';
+// (Импорты lucide-react остаются, но мы будем их использовать в других компонентах)
 import styles from "./button.module.css";
-import { Menu, X, Trash, Pencil, Plus, UserPlus, UserPen,LogOut } from "lucide-react";
+import {
+  Menu,
+  X,
+  Trash,
+  Pencil,
+  Plus,
+  UserPlus,
+  UserPen,
+  LogOut,
+} from "lucide-react";
 
-
-const CloseIconButton = ({ onClick, title = "Закрыть" }) => (
-  <button onClick={onClick} type="button" className={styles.iconButton} title={title}>
-    <X size={24} />
+/**
+ * Базовый компонент иконочной кнопки.
+ * Он выносит всю общую логику: тип, класс, title, размер иконки.
+ * @param {object} props
+ * @param {React.ElementType} props.Icon - Компонент иконки (например, X, Trash).
+ * @param {function} props.onClick - Обработчик клика.
+ * @param {string} props.title - Текст для title (подсказка).
+ * @param {object} props.rest - Остальные пропсы.
+ */
+export const BaseIconButton = ({
+  Icon, // Новый проп: сам компонент иконки
+  onClick,
+  title,
+  ...props
+}) => (
+  <button
+    onClick={onClick}
+    type="button"
+    className={styles.iconButton} // Общий класс
+    title={title} // Общий title
+    {...props}
+  >
+    {/* Рендерим переданный компонент Icon с заданным размером */}
+    <Icon size={24} />
   </button>
 );
+// src/elem/button/iconButtons.jsx (продолжение)
 
-const DeleteIconButton = ({ onClick, title = "Удалить" }) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <Trash size={24} />
-  </button>
-);
-
-const EditIconButton = ({ onClick, title = "Редактировать" }) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <Pencil size={24} />
-  </button>
-);
-
-// Замените на заглушку или на функцию, которая действительно выполняет выход в вашем приложении
+// Внимание: handleSignOut можно вынести в отдельный хук или общую логику,
+// но для простоты перенесем его сюда, как в вашем примере.
 const handleSignOut = () => {
-    console.log('Попытка выхода из системы...');
-    // Здесь должна быть ваша реальная логика выхода (например, очистка токена, перенаправление)
-    // window.location.href = '/auth'; // Пример перенаправления
+  console.log('Попытка выхода из системы...');
+  // Ваша логика выхода
 };
 
-const LogOutIconButton = ({ title = "Выход" }) => (
-  <button onClick={handleSignOut}  type="button" className={styles.iconButton} title={title}>
-    <LogOut  size={24} />
-  </button>
+export const CloseIconButton = (props) => (
+  <BaseIconButton
+    Icon={X}
+    title={props.title ?? "Закрыть"}
+    {...props}
+  />
 );
 
+export const DeleteIconButton = (props) => (
+  <BaseIconButton
+    Icon={Trash}
+    title={props.title ?? "Удалить"}
+    {...props}
+  />
+);
+
+export const EditIconButton = (props) => (
+  <BaseIconButton
+    Icon={Pencil}
+    title={props.title ?? "Редактировать"}
+    {...props}
+  />
+);
+
+export const AddIconButton = (props) => (
+  <BaseIconButton
+    Icon={Plus}
+    title={props.title ?? "Добавить"}
+    {...props}
+  />
+);
+
+export const UserAddIconButton = (props) => (
+  <BaseIconButton
+    Icon={UserPlus}
+    title={props.title ?? "Добавить пользователя"}
+    {...props}
+  />
+);
+
+export const UserEditIconButton = (props) => (
+  <BaseIconButton
+    Icon={UserPen}
+    title={props.title ?? "Редактировать пользователя"}
+    {...props}
+  />
+);
+
+export const MenuIconButton = (props) => (
+  <BaseIconButton
+    Icon={Menu}
+    title={props.title ?? "Меню"}
+    {...props}
+  />
+);
+
+// Для LogOutIconButton мы задаем фиксированный onClick, если он не передан
+export const LogOutIconButton = ({ onClick = handleSignOut, ...props }) => (
+  <BaseIconButton
+    Icon={LogOut}
+    onClick={onClick} // Используем переданный onClick или handleSignOut по умолчанию
+    title={props.title ?? "Выход"}
+    {...props}
+  />
+);
+
+// Экспорты остаются прежними
 /*
-const LogOutIconButton = ({ title = "Выход" }) => (
-  <button onClick={async () => {
-    await signOut({ callbackUrl: '/auth' });
-  }}  type="button" className={styles.iconButton} title={title}>
-    <LogOut  size={24} />
-  </button>
-);*/
-const AddIconButton = ({ onClick, title = "Добавить" }) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <Plus size={24} />
-  </button>
-);
-
-const UserAddIconButton = ({ onClick, title = "Добавить пользователя" }) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <UserPlus size={24} />
-  </button>
-);
-
-const UserEditIconButton = ({
-  onClick,
-  title = "Редактировать пользователя",}) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <UserPen size={24} />
-  </button>
-);
-
-const MenuIconButton = ({ onClick, title = "Меню" }) => (
-  <button onClick={onClick}  type="button" className={styles.iconButton} title={title}>
-    <Menu size={24} />
-  </button>
-);
-
 export {
   MenuIconButton,
   CloseIconButton,
@@ -78,6 +124,5 @@ export {
   AddIconButton,
   UserAddIconButton,
   UserEditIconButton,
-  LogOutIconButton ,
-};
-//stroke={'blue'}
+  LogOutIconButton,
+};*/

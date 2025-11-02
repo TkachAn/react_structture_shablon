@@ -16,7 +16,11 @@ const Clients = () => {
       {/* 2. Используем метод .map() для рендеринга списка */}
       {clientsData.map((client) => (
         <li key={client.id} className={s.clients__item}>
-          <a href="./index.html" className={s.clients__link}>
+          <a
+            href="./index.html"
+            className={s.clients__link}
+            aria-label={client.ariaLabel}
+          >
             <svg className={s.clients__icon}>
               {/* 3. Динамически подставляем SVG-идентификатор */}
               <use href={`./defs.svg#${client.svgId}`}></use>

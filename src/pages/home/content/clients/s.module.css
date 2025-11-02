@@ -1,73 +1,10 @@
-/* Базовый блок 
-.advantages {
-  margin-top: 60px;
-  margin-bottom: 30px;
-}*/
-/* Блок __feature (.advantages__feature) */
-
-/* Блок __list (.advantages__list) */
-.advantages__list,
 .clients__list {
   margin: 0 auto;
   align-content: center;
   gap: 30px;
   list-style: none;
-  /* grid-template-columns: repeat(4, 1fr);*/
 }
 
-.advantages__feature {
-  margin: 0 auto;
-  width: 100%;
-  padding-bottom: 40px;
-}
-/* Блок __group (.advantages__group) */
-.advantages__group {
-  max-width: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 120px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background-color: #f5f4fa;
-}
-/* Блок __icon (.advantages__icon) */
-.advantages__icon {
-  width: 70px;
-  height: 70px;
-}
-.advantages__title-grup {
-  text-align: center;
-  /* Заглушка для переменной $colorTxt-secondary. */
-  color: #212121;
-  /* Часто используется для вторичного текста */
-  /* Заглушка для fontSize().text-align: center; */
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-/* Блок __text (.advantages__text) */
-.advantages__text {
-  /*display: inline-block;
-  /Заглушка для fontSize(). 
-  font-size: 14px;*/
-  font-weight: 400;
-  margin-bottom: 30px;
-  text-align: left;
-
-}
-
-/*
- * Стили для основного блока .clients
- */
-/*
- * ------------------------------------------------------------------
- * ОСНОВНЫЕ СТИЛИ (MOBILE FIRST - 2 элемента в ряд)
- * ------------------------------------------------------------------
- */
 .clients {
   text-align: center;
 }
@@ -130,45 +67,14 @@
   transition: fill 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
-@media (min-width: 480px) {/*
-  .advantages__list {
-    display: flex;
-    flex-wrap: wrap;
-  }*/
-
-  .advantages__title-grup {
-    text-align: start;
-  }
-}
 @media (min-width: 768px) {
-  .advantages__list {
-    /*justify-content: space-between;*/
-    display: grid;
-    /*grid-auto-flow: dense;*/
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-  }
   .clients__list {
     grid-template-columns: repeat(3, 1fr);
-  }
-    .advantages__feature {/*
-    align-content: stretch;*/
-    padding-bottom: 0px;
   }
 }
 
 /* Медиа-запрос для .advantages__feature (min-width: 1200px) */
 @media (min-width: 1280px) {
-  .advantages {
-    margin-top: 93px;
-    margin-bottom: 0;
-  }
-
-  .advantages__list {
-    /*justify-content: space-between;*/
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .clients__title {
     padding-bottom: 50px;
     font-size: 36px;
@@ -177,18 +83,4 @@
   .clients__list {
     grid-template-columns: repeat(6, 1fr);
   }
-}
-
-/*
- * ------------------------------------------------------------------
- * МЕДИАЗАПРОСЫ (ПОРЯДОК: 768px, затем 1200px)
- * ------------------------------------------------------------------
- */
-
-/* 🖥️ ПЛАНШЕТ (min-width: 768px): 4 клиента в ряд */
-@media screen and (min-width: 768px) {
-}
-
-/* 💻 ДЕСКТОП (min-width: 1280px): 6 клиентов в ряд */
-@media screen and (min-width: 1280px) {
 }

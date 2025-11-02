@@ -1,4 +1,4 @@
-import s from '../sP.module.css';
+import s from './s.module.css';
 
 export function Article1Content() {
   return (

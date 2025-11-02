@@ -12,6 +12,7 @@ const SocialLinks = () => {
           <li key={link.id}>
             <a
               href={link.href}
+              aria-label={link.ariaLabel}
               className={s.social__link}
               target="_blank"
               rel="noopener noreferrer"

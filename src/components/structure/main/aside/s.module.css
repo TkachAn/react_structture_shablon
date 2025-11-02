@@ -1,28 +1,30 @@
 .asideLeft {
   display: none;
-  background-color: #6fabe7;
+
   padding: 20px;
-  border-right: 1px solid #d1d;
+
   max-width: 220px;
 }
 
 .asideRight {
   display: none;
-  background-color: #1e67af;
+
   padding: 20px;
-  border-left: 1px solid #dfd;
+
   max-width: 220px;
 }
 @media (min-width: 768px) {
   .asideLeft {
     display: block;
-    color: #d1d;
-    background-color: #6fabe7;
+
     padding: 20px;
     border-right: 1px solid #d1d;
     max-width: 220px;
   }
   .asideRight {
     display: block;
+    padding: 20px;
+    border-left: 1px solid #d1d;
+    max-width: 220px;
   }
 }

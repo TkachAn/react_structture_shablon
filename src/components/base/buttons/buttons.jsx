@@ -1,129 +1,74 @@
 // src/elem/buttons/buttons.jsx
-'use client';
-import React from "react";
-import { signOut } from 'next-auth/react';
+import { signOut } from "next-auth/react";
 import styles from "./button.module.css";
-import classNames from "classnames";
+import classNames from "classnames"; // Теперь используем!
 
-export const SubmitButton = ({
-  onClick,
-  children = "Сохранить",
-  status = "normal",
-  ...props
-}) => (
-  <button
-    onClick={onClick}
-    type="submit"
-    className={`${styles.baseButton} ${styles[status]}`}
-    disabled={status === "blocked"}
-    {...props}
-  >
-    {children}
-  </button>
-);
-
-export const DeleteButton = ({
-  onClick,
-  children = "Удалить",
-  status = "normal",
-  ...props
-}) => (
-  <button
-    onClick={onClick}
-    type="button"
-    className={`${styles.baseButton} ${styles[status]}`}
-    disabled={status === "blocked"}
-    {...props}
-  >
-    {children}
-  </button>
-);
-
-export const AddButton = ({
-  onClick,
-  children = "Добавить",
-  status = "normal",
-  ...props
-}) => (
-  <button
-    onClick={onClick}
-    type="button"
-    className={`${styles.baseButton} ${styles[status]}`}
-    disabled={status === "blocked"}
-    {...props}
-  >
-    {children}
-  </button>
-);
-
-export const EditButton = ({
-  onClick,
-  children = "Изменить",
-  status = "normal",
-  ...props
-}) => (
-  <button
-    onClick={onClick}
-    type="button"
-    className={`${styles.baseButton} ${styles[status]}`}
-    disabled={status === "blocked"}
-    {...props}
-  >
-    {children}
-  </button>
-);
-
-export const NormButton = ({
+/**
+ * Базовый компонент кнопки с общей логикой и стилями.
+ * @param {object} props
+ * @param {function} props.onClick - Обработчик клика.
+ * @param {React.ReactNode} props.children - Содержимое кнопки.
+ * @param {'normal' | 'blocked' | string} [props.status='normal'] - Статус кнопки для стилей/дизейбла.
+ * @param {'submit' | 'button'} [props.type='button'] - Тип кнопки.
+ * @param {string | object} [props.className] - Дополнительные классы.
+ * @param {object} props.rest - Остальные пропсы HTML-элемента <button>.
+ */
+export const BaseButton = ({
   onClick,
   children,
   status = "normal",
-  ...props
-}) => (
-  <button
-    onClick={onClick}
-    type="button"
-    className={`${styles.baseButton} ${styles[status]}`}
-    disabled={status === "blocked"}
-    {...props}
-  >
-    {children}
-  </button>
-);
-/*
-export const customButton = ({
-  children,
-  onClick,
   type = "button",
-  status = "default", // accent, danger, success, warning
-  size = "medium", // small, medium, large
-  disabled = false,
-  iconLeft = null,
-  iconRight = null,
-}) => {
-  const btnClass = classNames(
-    styles.button,
-    styles[status],
-    styles[size],
-    disabled && styles.disabled
-  );
+  className, // Добавляем возможность пробросить внешние классы
+  ...props
+}) => (
+  <button
+    onClick={onClick}
+    type={type}
+    className={classNames(
+      styles.baseButton, // Статический базовый класс
+      styles[status], // Динамический класс, зависящий от status
+      className // Любые внешние классы, которые могут прийти
+    )}
+    disabled={status === "blocked"}
+    {...props}
+  >
+    {children}
+  </button>
+);
+// src/elem/buttons/buttons.jsx (продолжение)
 
-  return (
-    <button className={btnClass} onClick={onClick} type={type} disabled={disabled}>
-      {iconLeft && <span className={styles.icon}>{iconLeft}</span>}
-      {children}
-      {iconRight && <span className={styles.icon}>{iconRight}</span>}
-    </button>
-  );
-};
-*/
-export const LogoutButton = () => {
-  const handleLogout = async () => {
-    await signOut({ callbackUrl: '/auth' });
-  };
+export const SubmitButton = (props) => (
+  <BaseButton
+    type="submit"
+    children={props.children ?? "Сохранить"}
+    {...props}
+  />
+);
 
-  return (
-    <button className={styles.out} onClick={handleLogout}>
-      Выйти
-    </button>
-  );
-};
+export const DeleteButton = (props) => (
+  <BaseButton
+    children={props.children ?? "Удалить"}
+    {...props}
+  />
+);
+
+export const AddButton = (props) => (
+  <BaseButton
+    children={props.children ?? "Добавить"}
+    {...props}
+  />
+);
+
+export const EditButton = (props) => (
+  <BaseButton
+    children={props.children ?? "Изменить"}
+    {...props}
+  />
+);
+
+export const NormButton = (props) => (
+  // По сути, просто BaseButton
+  <BaseButton
+    {...props}
+  />
+);
