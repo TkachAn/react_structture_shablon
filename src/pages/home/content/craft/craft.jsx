@@ -5,7 +5,7 @@ export const Craft = () => {
     <ul className={s.gallery}>
       <li className={s.item}>
         <img
-          src="./images/img1.jpg"
+          src="./images/img1.webp"
           alt="рабочее место разработчика ПО 1"
           width="370"
         />
@@ -15,7 +15,7 @@ export const Craft = () => {
       </li>
       <li className={s.item}>
         <img
-          src="./images/img2.jpg"
+          src="./images/img2.webp"
           alt="рабочее место разработчика ПО 2"
           width="370"
         />
@@ -25,7 +25,7 @@ export const Craft = () => {
       </li>
       <li className={s.item}>
         <img
-          src="./images/img3.jpg"
+          src="./images/img3.webp"
           alt="рабочее место разработчика ПО 3"
           width="370"
         />

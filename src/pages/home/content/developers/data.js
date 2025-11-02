@@ -4,9 +4,9 @@ export const developersData = [
     name: "Игорь Демьяненко",
     position: "Product Designer",
     image: {
-      src: "./images/img_dem_w_810.jpg",
+      src: "./images/img_dem_w_810.webp",
       srcset:
-        "./images/img_dem_w_354.jpg 1x, ./images/img_dem_w_810.jpg 2x",
+        "./images/img_dem_w_354.webp 1x, ./images/img_dem_w_810.webp 2x",
       alt: "Игорь Демьяненко",
     },
   },
@@ -15,9 +15,9 @@ export const developersData = [
     name: "Ольга Репина",
     position: "Frontend Developer",
     image: {
-      src: "./images/img_rep_w_810.jpg",
+      src: "./images/img_rep_w_810.webp",
       srcset:
-        "./images/img_rep_w_354.jpg 1x, ./images/img_rep_w_810.jpg 2x",
+        "./images/img_rep_w_354.webp 1x, ./images/img_rep_w_810.webp 2x",
       alt: "Ольга Репина",
     },
   },
@@ -26,9 +26,9 @@ export const developersData = [
     name: "Николай Тарасов",
     position: "Marketing",
     image: {
-      src: "./images/img_tar_w_810.jpg",
+      src: "./images/img_tar_w_810.webp",
       srcset:
-        "./images/img_tar_w_354.jpg 1x, ./images/img_tar_w_810.jpg 2x",
+        "./images/img_tar_w_354.webp 1x, ./images/img_tar_w_810.webp 2x",
       alt: "Николай Тарасов",
     },
   },
@@ -37,9 +37,9 @@ export const developersData = [
     name: "Михаил Ермаков",
     position: "UI Designer",
     image: {
-      src: "./images/img_erm_w_810.jpg",
+      src: "./images/img_erm_w_810.webp",
       srcset:
-        "./images/img_erm_w_354.jpg 1x, ./images/img_erm_w_810.jpg 2x",
+        "./images/img_erm_w_354.webp 1x, ./images/img_erm_w_810.webp 2x",
       alt: "Михаил Ермаков",
     },
   },
