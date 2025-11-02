@@ -25,11 +25,11 @@ export function HomePage() {
           <Section title="Наши услуги">
             <Craft />
           </Section>
-          <Section title="Наши клиенты">
-            <Clients />
-          </Section>
           <Section title="Наша команда разработчиков">
             <Developers />
+          </Section>
+          <Section title="Наши клиенты">
+            <Clients />
           </Section>
         </Main>
       </MainHome>
