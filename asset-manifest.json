@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_structture_shablon/static/css/main.442ecbac.css",
-    "main.js": "/react_structture_shablon/static/js/main.3fca84e9.js",
+    "main.css": "/react_structture_shablon/static/css/main.4d08d741.css",
+    "main.js": "/react_structture_shablon/static/js/main.72bc011e.js",
     "static/js/453.358a1bd2.chunk.js": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js",
     "static/media/hero_desc2400x1200@2x.webp": "/react_structture_shablon/static/media/hero_desc2400x1200@2x.aec16d562831dff5cccb.webp",
     "static/media/hero_descW3200x1200@2x.webp": "/react_structture_shablon/static/media/hero_descW3200x1200@2x.688cd5e691d0eece2a56.webp",
@@ -12,12 +12,12 @@
     "static/media/hero_tabl768x400@1x.webp": "/react_structture_shablon/static/media/hero_tabl768x400@1x.d948c905d0850886b96f.webp",
     "static/media/hero_mob480x400@1x.webp": "/react_structture_shablon/static/media/hero_mob480x400@1x.013cfcad706b42a3f738.webp",
     "index.html": "/react_structture_shablon/index.html",
-    "main.442ecbac.css.map": "/react_structture_shablon/static/css/main.442ecbac.css.map",
-    "main.3fca84e9.js.map": "/react_structture_shablon/static/js/main.3fca84e9.js.map",
+    "main.4d08d741.css.map": "/react_structture_shablon/static/css/main.4d08d741.css.map",
+    "main.72bc011e.js.map": "/react_structture_shablon/static/js/main.72bc011e.js.map",
     "453.358a1bd2.chunk.js.map": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.442ecbac.css",
-    "static/js/main.3fca84e9.js"
+    "static/css/main.4d08d741.css",
+    "static/js/main.72bc011e.js"
   ]
 }
