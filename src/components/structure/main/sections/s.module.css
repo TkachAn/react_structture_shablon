@@ -16,7 +16,8 @@
 
 .section {
   text-align: center;
-  margin-bottom: 60px;
+  margin: 0 auto 60px auto;
+ 
   /*background-color: #666666;*/
 
 }

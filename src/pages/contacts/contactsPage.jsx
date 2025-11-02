@@ -5,6 +5,7 @@ import { Main } from "../../components/structure/main/main";
 import { AsideLeft } from "../../components/structure/main/aside/asideL";
 import { AsideRight } from "../../components/structure/main/aside/asideR";
 import { FlexBox } from "../../components/structure/flexBox/flexBox";
+import { Container } from "../../components/structure/container/container";
 /*import s from "../sP.module.css";*/
 
 export function ContactsPage() {
@@ -12,7 +13,8 @@ export function ContactsPage() {
     <>
       <Header />
       <Main>
-        <FlexBox style={{ justifyContent: "center", marginBottom: "20px" }}>
+        <Container>     
+        <FlexBox style={{ justifyContent: "space-between", marginBottom: "20px" }}>
           <AsideLeft title={"Aside Left Section"}>
             <p>
               This is some aside content. This is some aside content. This is
@@ -32,6 +34,7 @@ export function ContactsPage() {
             </p>
           </AsideRight>
         </FlexBox>
+        </Container>
       </Main>
       <Footer />
     </>
