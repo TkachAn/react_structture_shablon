@@ -1,15 +1,23 @@
 {
   "files": {
-    "main.css": "/react_structture_shablon/static/css/main.5683068f.css",
-    "main.js": "/react_structture_shablon/static/js/main.fcb01af0.js",
+    "main.css": "/react_structture_shablon/static/css/main.442ecbac.css",
+    "main.js": "/react_structture_shablon/static/js/main.3fca84e9.js",
     "static/js/453.358a1bd2.chunk.js": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js",
+    "static/media/hero_desc2400x1200@2x.webp": "/react_structture_shablon/static/media/hero_desc2400x1200@2x.aec16d562831dff5cccb.webp",
+    "static/media/hero_descW3200x1200@2x.webp": "/react_structture_shablon/static/media/hero_descW3200x1200@2x.688cd5e691d0eece2a56.webp",
+    "static/media/hero_tabl1536x800@2x.webp": "/react_structture_shablon/static/media/hero_tabl1536x800@2x.dfe8e18baa658aa969e3.webp",
+    "static/media/hero_descW1600x600@1x.webp": "/react_structture_shablon/static/media/hero_descW1600x600@1x.3eb946550abd598fa57b.webp",
+    "static/media/hero_desc1200x600@1x.webp": "/react_structture_shablon/static/media/hero_desc1200x600@1x.226319c554780ae518b7.webp",
+    "static/media/hero_mob960x800@2x.webp": "/react_structture_shablon/static/media/hero_mob960x800@2x.48ce04915676ee4a0883.webp",
+    "static/media/hero_tabl768x400@1x.webp": "/react_structture_shablon/static/media/hero_tabl768x400@1x.d948c905d0850886b96f.webp",
+    "static/media/hero_mob480x400@1x.webp": "/react_structture_shablon/static/media/hero_mob480x400@1x.013cfcad706b42a3f738.webp",
     "index.html": "/react_structture_shablon/index.html",
-    "main.5683068f.css.map": "/react_structture_shablon/static/css/main.5683068f.css.map",
-    "main.fcb01af0.js.map": "/react_structture_shablon/static/js/main.fcb01af0.js.map",
+    "main.442ecbac.css.map": "/react_structture_shablon/static/css/main.442ecbac.css.map",
+    "main.3fca84e9.js.map": "/react_structture_shablon/static/js/main.3fca84e9.js.map",
     "453.358a1bd2.chunk.js.map": "/react_structture_shablon/static/js/453.358a1bd2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5683068f.css",
-    "static/js/main.fcb01af0.js"
+    "static/css/main.442ecbac.css",
+    "static/js/main.3fca84e9.js"
   ]
 }
