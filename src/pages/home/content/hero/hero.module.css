@@ -4,8 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding-top: 118px;
-  padding-bottom: 118px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-image: -webkit-gradient(
       linear,
       right top,
@@ -104,8 +104,8 @@
 
 @media (min-width: 1200px) {
   .hero {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     background-image: -webkit-gradient(
         linear,
         right top,
@@ -143,10 +143,11 @@
   text-align: center;
   padding: 100px 0; /* Дополнительный отступ для контента */
 }
+
 .hero__title {
   font-size: 2.1rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   text-transform: uppercase;
   color: whitesmoke;
 }
