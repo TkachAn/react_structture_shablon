@@ -1,7 +1,5 @@
 //src/elem/inputs/inputs.jsx
-"use client";
-
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styles from "./Inputs.module.css";
 
 const NoteInput = ({
@@ -262,7 +260,6 @@ const EmailModInput = ({
     </div>
   );
 };
-
 const TextInput = ({
 
   label = "",
@@ -360,7 +357,6 @@ const SelectInput = ({
     </div>
   );
 };
-
 const PhoneInput = ({
   onChange: externalOnChange,
   type = "text",
@@ -381,7 +377,7 @@ const PhoneInput = ({
   const [value, setValue] = useState("+380");
   const [internalErrorMessage, setInternalErrorMessage] = useState("");
   const isBlocked = status === "blocked";
-  const inputClassName = `${styles.input} ${styles[status]}`;
+  //const inputClassName = `${styles.input} ${styles[status]}`;
 
   const validatePhoneNumber = (number) => {
     if (!isPhoneNumber) {
@@ -403,7 +399,7 @@ const PhoneInput = ({
         onValidation(event.target.value === "" || validatePhoneNumber(event.target.value));
       }
     },
-    [externalOnChange, onValidation, isPhoneNumber]
+    {/*[externalOnChange, onValidation, isPhoneNumber]*/}
   );
 
   const handleBlur = useCallback(
@@ -427,7 +423,7 @@ const PhoneInput = ({
         externalOnBlur(event);
       }
     },
-    [externalOnBlur, onValidation, isPhoneNumber]
+    {/*[externalOnBlur, onValidation, isPhoneNumber]*/}
   );
 
   const errorMessageToDisplay = externalErrorMessage || internalErrorMessage;

@@ -1,6 +1,4 @@
 // src/elem/inputs/inputs.jsx
-"use client";
-
 import React, { useState, useEffect, useCallback} from "react";
 import styles from "./s.module.css";
 
@@ -180,18 +178,105 @@ const NumInput = (props) => (
 );
 
 /** Ввод пароля (внешнее управление) */
-const PassInput = (props) => (
-  <BaseInput {...props}>
-    <input
-      type="password"
-      autoComplete="new-password"
-      value={props.value}
-      onChange={props.onChange}
-      placeholder={props.placeholder || "Введите пароль"}
-      className={styles.input}
-    />
-  </BaseInput>
-);
+
+// ... (Импорты и прочие компоненты)
+
+// Переименованный базовый компонент пароля (не экспортируем)
+const BasePassInput = ({
+  label = "",
+  value,
+  onChange,
+  placeholder = "Введите пароль",
+  status = "normal",
+  className = "",
+  errorMessage = "",
+}) => {
+  const isBlocked = status === "blocked";
+  const isError = status === "error" || !!errorMessage;
+  
+  // Здесь используется BaseInput для корректного отображения лейбла и ошибки
+  return (
+    <BaseInput 
+      label={label} 
+      className={className} 
+      status={status} 
+      errorMessage={errorMessage}
+    >
+      <input
+        type="password"
+        autoComplete="new-password"
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        disabled={isBlocked}
+        className={`${styles.input} ${styles[status]}`}
+      />
+    </BaseInput>
+  );
+};
+
+// Экспортируемый компонент (для использования, если нужно только одно поле)
+const PassInput = BasePassInput;
+// *******************************************************************
+
+
+// НОВЫЙ КОМПОНЕНТ С ПОДТВЕРЖДЕНИЕМ ПАРОЛЯ
+export const SecurePassInput = ({
+  label = "Пароль",
+  confirmLabel = "Подтвердите пароль",
+  onChange = () => {}, // Заглушка для устойчивости
+  placeholder = "Введите пароль",
+  status = "normal",
+  className = "",
+  errorText = "Пароли не совпадают",
+}) => {
+  const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+  const [isMatch, setIsMatch] = useState(true);
+
+  useEffect(() => {
+    // 1. Проверяем совпадение, только если оба поля заполнены
+    const match = password === confirm;
+    setIsMatch(match);
+
+    // 2. Отправляем значение наружу, только если оно валидно
+    if (match && password.length > 0) {
+      onChange({ target: { value: password } });
+    } else {
+      // Отправляем null, если не совпадает или пусто
+      onChange({ target: { value: null } }); 
+    }
+  }, [password, confirm, onChange]);
+
+  // Вычисляем статус для отображения
+  const finalStatus = !isMatch ? 'error' : status;
+  const errorMessage = !isMatch ? errorText : '';
+
+  return (
+    <div className={className}>
+      {/* 1. Поле для ввода пароля */}
+      <BasePassInput
+        label={label}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder={placeholder}
+        status={finalStatus}
+        errorMessage={errorMessage}
+      />
+      
+      {/* 2. Поле для подтверждения пароля */}
+      <BasePassInput
+        label={confirmLabel}
+        value={confirm}
+        onChange={(e) => setConfirm(e.target.value)}
+        placeholder={placeholder}
+        status={finalStatus}
+        errorMessage={errorMessage}
+      />
+    </div>
+  );
+};
+
 
 /** Поле выбора (Select) */
 const SelectInput = ({ options = [], placeholder = "Выберите", ...props }) => (
@@ -439,3 +524,18 @@ export {
   NumInput,
   NoteInput,
 };
+
+/*
+const PassInput = (props) => (
+  <BaseInput {...props}>
+    <input
+      type="password"
+      autoComplete="new-password"
+      value={props.value}
+      onChange={props.onChange}
+      placeholder={props.placeholder || "Введите пароль"}
+      className={styles.input}
+    />
+  </BaseInput>
+);
+*/

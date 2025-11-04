@@ -1,4 +1,3 @@
-
 .footer {
   background-color: #333;
   color: white;
@@ -20,13 +19,16 @@ footer p {
   font-weight: normal;
   line-height: 1.5;
 }
+
 /*footer */
 .flexbox {
-  display: flex;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  /*align-items: baseline;*/
   gap: 40px;
-} 
+}
+
 .copyright {
   margin-top: 35px;
   margin-bottom: 0;
@@ -35,7 +37,10 @@ footer p {
 
 @media screen and (min-width: 768px) {
   .flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
     gap: 60px;
   }
-  
+
 }

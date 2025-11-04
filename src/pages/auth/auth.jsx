@@ -4,6 +4,8 @@ import { Header } from "../../components/structure/header/header.jsx";
 import { Main } from "../../components/structure/main/main.jsx";
 import { Section } from "../../components/structure/main/sections/section";
 import { Footer } from "../../components/structure/footer/footer.jsx";
+import { Registration } from "./registration.jsx"; 
+
 
 export function AuthPage() {
     return (
@@ -15,7 +17,7 @@ export function AuthPage() {
             <SignIn />
           </Section>
           <Section title={"Registration"}>
-            <p>Please sign up to create a new account.</p>
+            <Registration />
             <SignUp />
           </Section>
         </Main>
