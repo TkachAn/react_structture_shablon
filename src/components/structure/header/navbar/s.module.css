@@ -18,6 +18,35 @@
   z-index: 100;
   padding: 10px 0;
 }
+
+.active-link {
+  /* Стиль для активной ссылки, например: */
+  position: relative;
+  font-weight: bold;
+  color: red; /* Или стиль, имитирующий указатель, как на вашем изображении */
+  /* Возможно, нужно стилизовать родительский элемент или добавить псевдоэлемент. */
+}
+
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+.active-link::before {
+  content: '';
+  position: absolute;
+  top: -5px; /* Располагаем над текстом */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red; /* Цвет линии */
+}
+
 .invisible {
   display: block;
 }
@@ -55,7 +84,19 @@
   }
   .navbar {
     display: block;
+    position: relative;
+   /* border-bottom: red solid 2px;*/
   }
+  /*
+  .navbar::after {
+    position: absolute;
+    bottom: -30px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: red;    
+  }*/
 .invisible {
   display: none;
 }

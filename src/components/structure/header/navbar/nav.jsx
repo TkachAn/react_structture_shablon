@@ -1,7 +1,8 @@
 
 //import s from '../../../structure/s.module.css'
 import s from "./s.module.css";
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 export function Navbar({ isMobile = false, isMenuOpen = false, closeMenu = () => {} }) {
 
@@ -17,24 +18,48 @@ export function Navbar({ isMobile = false, isMenuOpen = false, closeMenu = () =>
       <nav className={navClass}>
         <ul>
           <li className={s.invisible}>
-            <Link to="/SignIn" onClick={isMobile ? closeMenu : undefined}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? s["active-link"] : s["inactive-link"]
+              }
+              to="/SignIn"
+              onClick={isMobile ? closeMenu : undefined}
+            >
               Sign In
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" onClick={isMobile ? closeMenu : undefined}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? s["active-link"] : s["inactive-link"]
+              }
+              to="/"
+              onClick={isMobile ? closeMenu : undefined}
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contacts" onClick={isMobile ? closeMenu : undefined}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? s["active-link"] : s["inactive-link"]
+              }
+              to="/contacts"
+              onClick={isMobile ? closeMenu : undefined}
+            >
               Contacts
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about" onClick={isMobile ? closeMenu : undefined}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? s["active-link"] : s["inactive-link"]
+              }
+              to="/about"
+              onClick={isMobile ? closeMenu : undefined}
+            >
               About
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
