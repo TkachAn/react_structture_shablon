@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks";
 
 const TeamCard = ({ name, position, image }) => {
   return (
-    <li className={s.developers__teamCard + " " + s.teamCard}>
+    <div className={s.developers__teamCard + " " + s.teamCard}>
       <img
         className={s.teamCard__img}
         srcSet={image.srcset}
@@ -18,7 +18,7 @@ const TeamCard = ({ name, position, image }) => {
         </p>
         <SocialLinks />
       </div>
-    </li>
+    </div>
   );
 };
 

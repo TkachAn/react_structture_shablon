@@ -3,9 +3,26 @@ import s from './s.module.css';
 export function Article1Content() {
   return (
     <div className={s.article}>
-      <p>This is the content of the article.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quos iusto, cumque atque culpa amet maxime exercitationem natus magni, perferendis tempore officia laudantium veritatis consequuntur corrupti nam, error dolore? Odit?
-      </p>
+      <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </div>
     </div>
   );
 }
