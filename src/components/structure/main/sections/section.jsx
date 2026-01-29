@@ -6,9 +6,9 @@ export function Hero({ children }) {
   return <section className={s.hero}>{children}</section>;
 }
 
-export function Section({ children, title }) {
+export function Section({ children, title, clas }) {
   return (
-    <section className={s.section}>
+    <section className={`${s.section} ${clas || ""}`}>
       <Container>
         <h2 className={s.section_title}>{title}</h2>
         {children}

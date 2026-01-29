@@ -9,6 +9,7 @@ import { HeroContent } from "./content/hero/hero";
 import Clients from "./content/clients/clients";
 import { Craft } from "./content/craft/craft";
 import Developers from "./content/developers/developers";
+import s from "./s.module.css";
 
 export function HomePage() {
   return (
@@ -22,7 +23,7 @@ export function HomePage() {
           <Section>
             <Advantages />
           </Section>
-          <Section title="Наши услуги">
+          <Section title="Наши услуги" clas={s.background}>
             <Craft />
           </Section>
           <Section title="Наша команда разработчиков">

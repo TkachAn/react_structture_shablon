@@ -15,11 +15,15 @@
 }
 
 .section {
-  text-align: center;
-  margin: 0 auto 60px auto;
+  text-align: center;/*
+  margin: 0 auto 60px auto;*/
+  padding: 30px 20px;
  
   /*background-color: #666666;*/
 
+}
+.background {
+    background-color: rgba(240, 240, 240, 0.8);
 }
 /*
 @media (min-width: 1200px) {

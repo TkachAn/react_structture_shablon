@@ -4,7 +4,7 @@ import { Header } from "../../components/structure/header/header.jsx";
 import { Main } from "../../components/structure/main/main.jsx";
 import { Section } from "../../components/structure/main/sections/section";
 import { Footer } from "../../components/structure/footer/footer.jsx";
-import { Registration } from "./registration.jsx"; 
+import { RegistrationForm } from "../../components/base/forms/regForm.jsx";
 
 
 export function AuthPage() {
@@ -17,12 +17,11 @@ export function AuthPage() {
             <SignIn />
           </Section>
           <Section title={"Registration"}>
-            <Registration />
+            <RegistrationForm />
             <SignUp />
           </Section>
         </Main>
         <Footer />
       </>
-
     );
 }

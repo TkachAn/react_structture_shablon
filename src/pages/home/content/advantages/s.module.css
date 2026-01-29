@@ -5,15 +5,18 @@
   list-style: none;
   /* grid-template-columns: repeat(4, 1fr);*/
 }
+
 .invisible {
   position: absolute;
   opacity: 0;
 }
+
 .advantages__feature {
   margin: 0 auto;
   width: 100%;
   padding-bottom: 40px;
 }
+
 /* Блок __group (.advantages__group) */
 .advantages__group {
   /*max-width: 450px;*/
@@ -26,31 +29,36 @@
   padding-bottom: 25px;
   background-color: #f5f4fa;
 }
+
 /* Блок __icon (.advantages__icon) */
 .advantages__icon {
   /*width: 70px;
   height: 70px;*/
-  width: 6rem;
+  width: 40%;
   height: auto;
 }
-.advantages__title-grup {
+
+.advantages__titlegrup {
   text-align: center;
   /* Заглушка для переменной $colorTxt-secondary. */
   color: #212121;
   /* Часто используется для вторичного текста */
   /* Заглушка для fontSize().text-align: center; */
-  font-size: 14px;
+  font-size: 1em;
+  /*font-size: clamp(16px, 3vw, 20px);*/
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
   padding-top: 30px;
   padding-bottom: 10px;
 }
+
 /* Блок __text (.advantages__text) */
 .advantages__text {
   /*display: inline-block;
-  /Заглушка для fontSize(). 
-  font-size: 14px;*/
+  /Заглушка для fontSize(). */
+  /*font-size: 0.9em;*/
+  font-size: clamp(16px, 2.5vw, 18px);
   font-weight: 400;
   margin-bottom: 30px;
   text-align: left;
@@ -62,13 +70,15 @@
     text-align: start;
   }
 }
-@media (min-width: 768px) {
+
+@media (min-width: 620px) {
   .advantages__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
   }
-    .advantages__feature {
+
+  .advantages__feature {
     padding-bottom: 0px;
   }
 }

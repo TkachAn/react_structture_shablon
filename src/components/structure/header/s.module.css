@@ -12,6 +12,7 @@
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(1, 2, 0, 0.1);
   position: relative;
+  padding: 10px 15px;
 }
 
 /* 2. Показываем кнопку-иконку для открытия меню на мобильных */

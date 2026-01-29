@@ -1,5 +1,5 @@
-// src/elem/buttons/buttons.jsx
-import { signOut } from "next-auth/react";
+// src/base/buttons/buttons.jsx
+
 import styles from "./button.module.css";
 import classNames from "classnames"; // Теперь используем!
 
@@ -44,7 +44,29 @@ export const SubmitButton = (props) => (
     {...props}
   />
 );
+export const SubmitModButton = ({
+  children,
+  disabled,
+  type = "button",
+  className = "",
+  ...props
+}) => {
+  // Вычисляем класс динамически
+  const buttonClass = `${styles.submitButton} ${className} 
+                         ${disabled ? styles.disabled : styles.accent}`;
+  // Предполагается, что стили accent делают кнопку синей/активной
 
+  return (
+    <button
+      type={type}
+      disabled={disabled} // Этот пропс делает кнопку некликабельной
+      className={buttonClass} // Этот класс меняет внешний вид
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 export const DeleteButton = (props) => (
   <BaseButton
     children={props.children ?? "Удалить"}
@@ -66,9 +88,3 @@ export const EditButton = (props) => (
   />
 );
 
-export const NormButton = (props) => (
-  // По сути, просто BaseButton
-  <BaseButton
-    {...props}
-  />
-);

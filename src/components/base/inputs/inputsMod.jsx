@@ -1,10 +1,44 @@
-// src/elem/inputs/inputs.jsx
-import React, { useState, useEffect, useCallback} from "react";
-import styles from "./s.module.css";
+// src/base/inputs/inputs.jsx
+import React, { useState, useEffect, useCallback, useRef} from "react";
+import styles from "./s.module.css";/*
+import React, { useState, useEffect, useCallback } from "react";
+import styles from "./s.module.css";*/
 
 // 1. Базовый компонент для обертки и стилизации (Uncontrolled/External Control)
 // Используется для полей, где управление значением и изменениями полностью внешнее (например, PassInput, NumInput, TextInput, SelectInput)
-const BaseInput = ({
+export const BaseInput = ({
+  label,
+  className = "",
+  status = "normal", // normal | accent | blocked | error
+  errorMessage, // Отображаемое сообщение об ошибке
+  id,
+  children,
+}) => {
+  const isBlocked = status === "blocked";
+  const isError = status === "error" || !!errorMessage; // Если есть errorMessage, считаем, что статус "error"
+
+  return (
+    <div className={`${styles.inputWrapper} ${className}`}>
+      {label && (
+        <label htmlFor={id} className={styles.label}>
+          {label}
+        </label>
+      )}
+      {React.cloneElement(children, {
+        className: `${children.props.className || ""} ${styles[status]} ${
+          isError ? styles.error : ""
+        }`,
+        disabled: isBlocked,
+        id: id,
+      })}
+      {isError && <div className={styles.errorMessage}>{errorMessage}</div>}
+    </div>
+  );
+};
+// 1. Базовый компонент для обертки и стилизации (Uncontrolled/External Control)
+// Используется для полей, где управление значением и изменениями полностью внешнее (например, PassInput, NumInput, TextInput, SelectInput)
+
+const BaseInputOld = ({
   label,
   className = "",
   status = "normal", // normal | accent | blocked | error
@@ -146,7 +180,7 @@ const validatePhoneNumber = (number) => {
   const cleaned = ("" + number).replace(/\D/g, "");
   return cleaned.length === 12;
 };
-
+const isValidPassword = (value) => value && value.length >= 6; // Валидатор: не менее 6 символов
 // 4. Компоненты на основе BaseInput и ControlledInput
 
 // --- Компоненты, управляемые извне (BaseInput) ---
@@ -220,7 +254,6 @@ const PassInput = BasePassInput;
 // *******************************************************************
 
 
-// НОВЫЙ КОМПОНЕНТ С ПОДТВЕРЖДЕНИЕМ ПАРОЛЯ
 export const SecurePassInput = ({
   label = "Пароль",
   confirmLabel = "Подтвердите пароль",
@@ -228,51 +261,78 @@ export const SecurePassInput = ({
   placeholder = "Введите пароль",
   status = "normal",
   className = "",
-  errorText = "Пароли не совпадают",
+  lengthErrorText = "Пароль слишком короткий (мин. 6 знаков)",
+  matchErrorText = "Пароли не совпадают",
 }) => {
-  const [password, setPassword] = useState('');
-  const [confirm, setConfirm] = useState('');
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState(""); // Для предотвращения бесконечного цикла, отслеживаем последнее отправленное значение
+  const lastSentValue = useRef(null); // 1. Состояние для ошибок
+
+  const [isLengthValid, setIsLengthValid] = useState(true);
   const [isMatch, setIsMatch] = useState(true);
 
   useEffect(() => {
-    // 1. Проверяем совпадение, только если оба поля заполнены
-    const match = password === confirm;
-    setIsMatch(match);
+    // 1. Основная проверка: валидность длины пароля
+    const lengthValid = isValidPassword(password);
+    setIsLengthValid(lengthValid);
 
-    // 2. Отправляем значение наружу, только если оно валидно
-    if (match && password.length > 0) {
-      onChange({ target: { value: password } });
+    let match = true;
+    let valueToSend = null;
+
+    if (lengthValid) {
+      // 2. Если длина валидна, проверяем совпадение
+      match = password === confirm;
+      setIsMatch(match); // 3. Отправляем значение только при совпадении и наличии пароля
+      valueToSend = match && password.length > 0 ? password : null;
     } else {
-      // Отправляем null, если не совпадает или пусто
-      onChange({ target: { value: null } }); 
+      // Если длина не валидна, сбросить состояние совпадения для внешнего вида
+      setIsMatch(true);
+      valueToSend = null;
+    } // 4. Отправляем значение наружу, ТОЛЬКО ЕСЛИ ОНО ИЗМЕНИЛОСЬ
+
+    if (valueToSend !== lastSentValue.current) {
+      onChange({ target: { value: valueToSend } });
+      lastSentValue.current = valueToSend;
     }
-  }, [password, confirm, onChange]);
+  }, [password, confirm, onChange]); // --- ЛОГИКА ОТОБРАЖЕНИЯ ОШИБОК ДЛЯ КАЖДОГО ПОЛЯ --- // Ошибки для поля "Пароль"
 
-  // Вычисляем статус для отображения
-  const finalStatus = !isMatch ? 'error' : status;
-  const errorMessage = !isMatch ? errorText : '';
+  const passError =
+    !isLengthValid && password.length > 0 ? lengthErrorText : "";
+  const passStatus = passError ? "error" : status; // Ошибки для поля "Подтвердите пароль"
 
+  let confirmError = "";
+  let confirmStatus = status; // Проверку совпадения начинаем, если Пароль валиден по длине
+
+  if (isLengthValid) {
+    // Если Пароли не совпадают И в поле подтверждения что-то введено
+    if (!isMatch && confirm.length > 0) {
+      confirmError = matchErrorText;
+      confirmStatus = "error";
+    }
+  } // Если пароль НЕ валиден по длине, поле подтверждения остается нейтральным // (если не передано внешнее состояние 'error' через props)
   return (
     <div className={className}>
-      {/* 1. Поле для ввода пароля */}
+
       <BasePassInput
         label={label}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder={placeholder}
-        status={finalStatus}
-        errorMessage={errorMessage}
+        status={passStatus}
+        errorMessage={passError}
       />
-      
-      {/* 2. Поле для подтверждения пароля */}
+
+      {/* 2. Поле для подтверждения пароля: только ошибка совпадения */}
+
       <BasePassInput
         label={confirmLabel}
         value={confirm}
         onChange={(e) => setConfirm(e.target.value)}
         placeholder={placeholder}
-        status={finalStatus}
-        errorMessage={errorMessage}
+        status={confirmStatus}
+        errorMessage={confirmError}
       />
+ 
     </div>
   );
 };

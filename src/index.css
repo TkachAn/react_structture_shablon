@@ -1,4 +1,4 @@
- /*
+/*
 |--------------------------------------------------------------------------
 | 1. CSS Reset (Полный сброс стилей)
 |--------------------------------------------------------------------------
@@ -14,20 +14,26 @@
   padding: 0;
 }
 
-
 /* 1.2 Сброс стилей для типографики (Заголовки, Параграфы) */
-p, blockquote {
+p,
+blockquote {
   /* Убираем стандартный margin/padding, который задают браузеры */
   margin: 0 0 0 0; /* Оставляем небольшой отступ снизу для блочного разделения */
   font-weight: inherit; /* Заголовки наследуют жирность, чтобы не было конфликтов */
-  font-weight:bold;
+  font-weight: bold;
 }
 /* 1.2 Сброс стилей для типографики (Заголовки, Параграфы) */
-h1, h2, h3, h4, h5, h6{
- margin: 10px 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
 }
 /* 1.3 Сброс стилей для Списков */
-ul, ol {
+ul,
+ol {
   list-style: none; /* Убираем маркеры/нумерацию */
   margin: 0;
   padding: 0;
@@ -47,15 +53,26 @@ img {
 }
 
 /* 1.6 Сброс стилей для Форм */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit; /* Наследуем шрифт от body */
 }
 
 /* 1.7 Сброс для HTML5 элементов */
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
   display: block;
 }
-
 
 /*
 |--------------------------------------------------------------------------
@@ -64,35 +81,46 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 */
 
 :root {
+  --color-primary: #e74c3c; /* Красный, подходит для ошибки 404 и акцентов */
+  --color-accent: #3498db; /* Синий, для кнопок и ссылок */
+  --color-accent-dark: #2980b9; /* Более темный синий для эффекта hover */
+  --color-text-main: #333333; /* Основной черный/темно-серый текст */
+  --color-text-secondary: #666666; /* Серый текст для описания */
+  --color-background-light: #f8f8f8; /* Светлый фон (для секций) */
 
-    --color-primary: #e74c3c; /* Красный, подходит для ошибки 404 и акцентов */
-    --color-accent: #3498db;  /* Синий, для кнопок и ссылок */
-    --color-accent-dark: #2980b9; /* Более темный синий для эффекта hover */
-    --color-text-main: #333333; /* Основной черный/темно-серый текст */
-    --color-text-secondary: #666666; /* Серый текст для описания */
-    --color-background-light: #f8f8f8; /* Светлый фон (для секций) */
+  /* 2. Отступы и размеры */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px; /* Стандартный отступ */
+  --spacing-lg: 40px;
 
-    /* 2. Отступы и размеры */
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 20px; /* Стандартный отступ */
-    --spacing-lg: 40px;
-/* 3. Типографика */
-    --font-size-base: 16px;
-    --line-height-base: 1.5;
+  --container-padding: 20px;
 
-    /* 🚀 4. Брейкпоинты для Media Queries (Mobile-first подход) */
-    --breakpoint-sm: 768px; /* Планшеты (Tablet) и выше */
-    --breakpoint-md: 1024px; /* Десктопы (Desktop) и выше */
-    --breakpoint-lg: 1280px; /* Большие Десктопы (Large Desktop) и выше */
-    --breakpoint-xl: 1440px; /* HD и выше */
+  /* 🚀 4. Брейкпоинты для Media Queries (Mobile-first подход) */
+  --bp-sm: 768px; /* Планшеты (Tablet) и выше */
+  --bp-md: 1024px; /* Десктопы (Desktop) и выше */
+  --bp-lg: 1280px; /* Большие Десктопы (Large Desktop) и выше */
+  --bp-xl: 1440px; /* HD и выше */
+
+  --bp-vga: 640px;
+  --bp-svga: 800px;
+  --bp-xga: 1024px;
+  --bp-sxga: 1280px;
+  --bp-uxga: 1600px;
+  --bp-wqxga: 2560px;
+
+  --bp-mobile-tv: 320px;
+  --bp-portable-tv: 640px;
+  --bp-dv: 720px;
+  --bp-hd: 1280px;
+  --bp-full-hd: 1920px;
+  --bp-ultra-hd-4k: 3840px;
 }
-
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,13 +128,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-#root{
-   display: flex;
+#root {
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
