@@ -1,0 +1,50 @@
+"homepage": "https://TkachAn.github.io/react_structture_shablon",
+
+
+
+
+
+      {/* 1. Добавляем компонент <picture> для адаптивного фона */}
+      <picture className={s.hero__background}>
+        {/*
+          Этот <source> будет выбран для больших экранов (>= 769px) и браузеров, 
+          поддерживающих WebP, с учетом плотности пикселей (1x и 2x).
+        */}
+        <source
+          media="(min-width: 1201px)"
+          type="image/webp"
+          srcset="./images/hero/hero_descW3200x1200@2x.webp 2x,
+                  ./images/hero/hero_descW1600x600@1x.webp 1x"
+          sizes="100vw"
+        />
+        <source
+          media="(min-width: 769px)"
+          type="image/webp"
+          srcset="./images/hero/hero_desc2400x1200@2x.webp 2x,
+                  ./images/hero/hero_desc1200x600@1x.webp 1x"
+          sizes="100vw"
+        />
+
+        <source
+          media="(min-width: 481px)"
+          type="image/webp"
+          srcset="./images/hero/hero_tabl1536x800@2x.webp 2x, 
+                  ./images/hero/hero_tabl768x400@1x.webp 1x"
+          // Сообщаем браузеру, что изображение занимает всю ширину вьюпорта
+          sizes="100vw"
+        />
+        <source
+          media="(max-width: 480px)"
+          type="image/webp"
+          srcset="./images/hero/hero_mob960x600@2x.webp 2x, 
+                  ./images/hero/hero_mob480x400@1x.webp 1x"
+          // Сообщаем браузеру, что изображение занимает всю ширину вьюпорта
+          sizes="100vw"
+        />
+        {/* Обязательный <img> как запасной вариант для всех случаев (Fallback) */}
+        <img
+          src="./images/hero/hero_mob480x400@1x.jpg"
+          alt="Команда инженеров, работающих над 3D-моделью"
+          className={s.hero__image}
+        />
+      </picture>
