@@ -4,20 +4,20 @@
 * ======================================
 * 1. BASE CONTROL STYLES (Общие стили для input, select, textarea)
 * ======================================
-*/
+*//*
 .baseControl {
   width: 100%;
-  padding: 8px 14px; /* Увеличим вертикальный паддинг для лучшей читаемости */
+  padding: 8px 14px; /* Увеличим вертикальный паддинг для лучшей читаемости *//*
   border-radius: 8px;
-  border: 1px solid var(--color-border-normal, #ccc); /* Используем CSS-переменные, если есть */
+  border: 1px solid var(--color-border-normal, #ccc); /* Используем CSS-переменные, если есть *//*
   font-size: 16px;
   line-height: 1.5;
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-sizing: border-box;
-  margin: 5px 0; /* Удалим лишний горизонтальный отступ, если инпут находится внутри inputWrapper */
-  box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.05); /* Смягчим тень */
+  margin: 5px 0; /* Удалим лишний горизонтальный отступ, если инпут находится внутри inputWrapper *//*
+  box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.05); /* Смягчим тень *//*
 }
-
+*/
 .input,
 .select,
 .textarea {
