@@ -13,22 +13,22 @@ import Developers from "./content/developers/developers";
 export function HomePage() {
   return (
     <>
-      <Header />
+      <Header id="header" />
       <MainHome>
         <Main>
-          <Hero>
+          <Hero id="hero">
             <HeroContent />
           </Hero>
-          <Section>
+          <Section id="advantages">
             <Advantages />
           </Section>
-          <Section title="Наши услуги">
+          <Section title="Наши услуги" id="services">
             <Craft />
           </Section>
-          <Section title="Наши клиенты">
+          <Section title="Наши клиенты" id="clients">
             <Clients />
           </Section>
-          <Section title="Наша команда разработчиков">
+          <Section title="Наша команда разработчиков" id="team">
             <Developers />
           </Section>
         </Main>

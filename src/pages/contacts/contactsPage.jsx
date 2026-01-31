@@ -4,8 +4,8 @@ import { Footer } from "../../components/structure/footer/footer";
 import { Main } from "../../components/structure/main/main";
 import { AsideLeft } from "../../components/structure/main/aside/asideL";
 import { AsideRight } from "../../components/structure/main/aside/asideR";
-import { HeaderV} from "../../components/structure/header/header_v";
-import { NavbarV } from "../../components/structure/header/navbar/nav_v";
+import { SidebarNav } from "../../components/structure/header/navDetails/vMenu";
+import { menuData } from "../../components/structure/header/navDetails/data/menu";
 /*import s from "../sP.module.css";*/
 
 export function ContactsPage() {
@@ -15,8 +15,8 @@ export function ContactsPage() {
       <Main>
         
         <AsideLeft title={"Aside Left Section"}>
-          <HeaderV />
-          <NavbarV />
+          <SidebarNav menuData={menuData} />
+
         </AsideLeft>
         <Section title={"Contact Information"}>
           <p>Email: contact@example.com</p>

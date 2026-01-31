@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import { Logo } from "./logo/logo.jsx";
 import { Navbar } from "./navbar/nav.jsx";
+import { MobileMenu } from "./navDetails/mobileMenu.jsx";
+import { HorizontalNav } from "./navDetails/hMenu.jsx";
+import { menuData } from "./navDetails/data/menu.js";
+import { homeMenu } from "./navDetails/data/menu.js";
 import { SignIn } from "./auth/signin.jsx";
 //import { SignUp } from "./sign_up/signup.jsx";
 //import s from "../../structure/s.module.css";
@@ -26,6 +30,12 @@ export function Header() {
         <div className={s.flexbox_header}>
           <Logo />
           <Navbar isMobile={false} />
+          <div>
+            <MobileMenu menuData={menuData} />
+          </div>
+          <div>
+            <HorizontalNav menuData={menuData} />
+          </div>
           <SignIn />
 
           {/* Блок с авторизацией и кнопкой меню */}

@@ -1,0 +1,197 @@
+/* styles.module.css */
+.listReset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- ОБЩИЕ СТИЛИ ДЛЯ DETAILS (АККОРДЕОН) --- */
+.navContainer details {
+  margin-bottom: 0.5rem;
+}
+
+.navContainer summary {
+  padding: 0.5rem;
+  background: #eee;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 4px;
+}
+
+.navContainer summary::-webkit-details-marker {
+  display: none;
+}
+
+.navContainer ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.navContainer a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #3498db;
+}
+
+/* --- МОБИЛЬНОЕ МЕНЮ (БОРГЕР) --- */
+.mobileMenu {
+  position: relative;
+}
+
+.burgerIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+}
+
+.burgerIcon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+}
+
+.mobileContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/* --- ГОРИЗОНТАЛЬНОЕ МЕНЮ (TABLET) --- */
+.tabletNav {
+  display: flex;
+  gap: 15px;
+}
+
+.tabletNav > details {
+  position: relative;
+}
+
+.tabletNav > details > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-width: 200px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+/* --- ВЕРТИКАЛЬНОЕ МЕНЮ (SIDEBAR) --- */
+.sidebarNav {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebarNav summary::before {
+  content: '▶';
+  display: inline-block;
+  width: 15px;
+  font-size: 0.7rem;
+  color: #999;
+  transition: transform 0.2s;
+}
+
+.sidebarNav details[open] > summary::before {
+  transform: rotate(90deg);
+  color: #333;
+}
+
+/* Обнуление для списков внутри меню */
+.navContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* БУРГЕР-МЕНЮ (Mobile) */
+.mobileMenu {
+  position: relative; /* Чтобы контент позиционировался относительно иконки */
+}
+
+.burgerIcon {
+  list-style: none;
+  cursor: pointer;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1px;
+}
+
+.burgerIcon::-webkit-details-marker {
+  display: none;
+}
+
+.burgerIcon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Выпадающая панель мобильного меню */
+.mobileContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px; /* Фиксированная ширина, чтобы не расплывалось */
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  z-index: 999;
+}
+
+/* Стилизация аккордеона внутри мобильного меню */
+.navContainer details {
+  margin-bottom: 4px;
+}
+
+.navContainer summary {
+  padding: 10px 15px;
+  background: #f5f5f5; /* Серый фон как в вашем styl.css */
+  cursor: pointer;
+  list-style: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.navContainer summary:hover {
+  background: #ebebeb;
+}
+
+.navContainer summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Отступы для вложенных уровней */
+.navContainer ul {
+  padding-left: 15px;
+}
+
+.navContainer a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #3498db;
+  font-size: 14px;
+}
+
+.navContainer a:hover {
+  background: #f0f8ff;
+}
